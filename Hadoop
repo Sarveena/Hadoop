@@ -1,0 +1,59 @@
+rmkec@RMK20907:~$ sudo apt-get install sun-java6-jdk
+[sudo] password for rmkec: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package sun-java6-jdk is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  apt:i386 apt
+
+E: Package 'sun-java6-jdk' has no installation candidate
+rmkec@RMK20907:~$ java -version
+Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar 
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
+rmkec@RMK20907:~$ sudo addgroup hadoop_group
+addgroup: The group `hadoop_group' already exists.
+rmkec@RMK20907:~$ sudo adduser --ingroup hadoop_group hduser2
+Adding user `hduser2' ...
+Adding new user `hduser2' (1011) with group `hadoop_group' ...
+Creating home directory `/home/hduser2' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for hduser2
+Enter the new value, or press ENTER for the default
+	Full Name []: sarveena
+	Room Number []: 233
+	Work Phone []: 4567
+	Home Phone []: 2345
+	Other []: 21
+Is the information correct? [Y/n] y
+rmkec@RMK20907:~$ sudo adduser hduser2
+adduser: The user `hduser2' already exists.
+rmkec@RMK20907:~$ su - hduser2
+Password: 
+hduser2@RMK20907:~$ ssh-keygen -t rsa -P ""
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/hduser2/.ssh/id_rsa): 
+Created directory '/home/hduser2/.ssh'.
+Your identification has been saved in /home/hduser2/.ssh/id_rsa.
+Your public key has been saved in /home/hduser2/.ssh/id_rsa.pub.
+The key fingerprint is:
+42:cb:8b:bd:a4:b2:b5:91:ec:31:65:4c:ea:5e:8a:94 hduser2@RMK20907
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|      o          |
+|     * .         |
+|    . B S        |
+|   + * o         |
+|  E X =          |
+| ..= X .         |
+|  oo* .          |
++-----------------+
